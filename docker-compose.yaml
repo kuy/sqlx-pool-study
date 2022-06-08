@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:14.3-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: sqlx
+      POSTGRES_USER: sqlx
+      POSTGRES_PASSWORD: sqlx
+    volumes:
+      - ./pg-init:/docker-entrypoint-initdb.d
